@@ -22,6 +22,10 @@ class HomeController extends Controller
         $posts = Post::latest()->take(6)->published()->get();
         return view('index', compact('posts'));
     }
+    public function debugg()
+    {
+        return view('newpage');
+    }
     public function posts()
     {
         $posts = Post::latest()->published()->paginate(10);
@@ -32,8 +36,8 @@ class HomeController extends Controller
         $post = Post::where('slug', $slug)->published()->first();
         // $posts = Post::latest()->take(3)->published()->get();
         // Increase View count
-        $postKey = 'post_'.$post->id;
-        if(!Session::has($postKey)){
+        $postKey = 'post_' . $post->id;
+        if (!Session::has($postKey)) {
             $post->increment('view_count');
             Session::put($postKey, 1);
         }
@@ -70,15 +74,16 @@ class HomeController extends Controller
 
         return view('tagPosts', compact('tags', 'query'));
     }
-    public function likePost($post){
+    public function likePost($post)
+    {
         // Check if user already liked the post or not
-        $user = Auth::user();
+        /*     $user = Auth::user();
         $likePost = $user->likedPosts()->where('post_id', $post)->count();
         if($likePost == 0){
             $user->likedPosts()->attach($post);
         } else{
             $user->likedPosts()->detach($post);
-        }
+        } */
         return redirect()->back();
     }
 }

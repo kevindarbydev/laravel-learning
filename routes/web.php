@@ -26,9 +26,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['verify' => true]);
 
-
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/posts', 'HomeController@posts')->name('posts');
+Route::get('/newpage', 'HomeController@debugg')->name('x'); // modify later
 Route::get('/post/{slug}', 'HomeController@post')->name('post');
 Route::get('/categories', 'HomeController@categories')->name('categories');
 Route::get('/category/{slug}', 'HomeController@categoryPost')->name('category.post');
@@ -37,7 +37,6 @@ Route::get('/tag/{name}', 'HomeController@tagPosts')->name('tag.posts');
 Route::post('/comment/{post}', 'CommentController@store')->name('comment.store')->middleware(['auth']);
 Route::post('/comment-reply/{comment}', 'CommentReplyController@store')->name('reply.store')->middleware(['auth']);
 Route::post('/like-post/{post}', 'HomeController@likePost')->name('post.like')->middleware(['auth', 'verified']);
-
 
 // Admin ////////////////////////////////////////////////////////////////////////
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {

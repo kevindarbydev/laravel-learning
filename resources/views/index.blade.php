@@ -11,8 +11,8 @@
         <h1>
           Welcome to SQLizer blog<br />
           <p>
-            L<span style="font-size: 0.7em">earn</span> &nbspC<span style="font-size: 0.7em">reate</span>
-            &nbspS<span style="font-size: 0.7em">hare</span>
+            L<span style="font-size: 0.7em">earn</span> &nbsp;C<span style="font-size: 0.7em">reate</span>
+            &nbsp;S<span style="font-size: 0.7em">hare</span>
           </p>
         </h1>
       </div>
@@ -118,7 +118,7 @@
             <div itemscope itemtype="https://schema.org/Person">
               <h6 class="fw-bold text-primary mb-0">
                 <span itemprop="name">
-                  <strong> Kevin Derby </strong></span>
+                  <strong> Kevin Darby </strong></span>
               </h6>
             </div>
           </div>
